@@ -100,6 +100,20 @@ Embed buffer data into the glTF file.
 #### Combine Buffer Data
 Combine all buffers into a single buffer.
 
+### Python scripting
+Export gltf to relative file path script:
+```python
+import bpy
+import os
+
+blend_file_path = bpy.data.filepath
+directory = os.path.dirname(blend_file_path)
+
+target_file_GL = os.path.join(directory, 'myfile.gltf')
+
+bpy.ops.export_scene.gltf(filepath=target_file_GL)
+```
+
 ### Extensions
 #### BLENDER_physics (Draft)
 Enable the [BLENDER_physics](https://github.com/Kupoman/blendergltf/tree/master/extensions/BLENDER_physics) extension to export rigid body physics data.
